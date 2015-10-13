@@ -1,0 +1,31 @@
+#! /bin/sh
+
+bspc config border_width	3
+bspc config window_gap		15
+
+bspc config split_ratio         0.50
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   true
+bspc config normal_frame_opacity 0.0
+bspc config focused_frame_opacity 0.1
+bspc config focus_follows_pointer true
+
+bspc monitor -d $(echo -e '\uf109') $(echo -e '\uf0ac') $(echo -e '\uf120') $(echo -e '\uf07c') $(echo -e '\uf001') $(echo -e '\uf141')
+
+# $(echo -e '\uf121') $(echo -e '\uf0c3')
+
+bspc config normal_border_color '#2B2D37'
+bspc config focused_border_color '#5294E2'
+bspc config presel_border_color '#E1E5EA'
+bspc config normal_sticky_border_color '#2B2D37'
+bspc config focused_sticky_border_color '#5294E2'
+bspc config urgent_border_color '#CC575D'
+
+bspc rule -a Steam follow=off floating=on desktop=^6
+bspc rule -a mplayer2 floating=on
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a scratchpad --sticky=on --floating=on
+
+panel &
